@@ -1,6 +1,8 @@
 h1 Home
 
+input([(ngModel)]="url", placeholder='Subreadit URL', type="text")
+
 button(type="button", (click)="getFeed()") Get Feed
 
-
-div {{ itemsCount }}
+div(*ngFor="let item of items").container
+    img(src="{{item}}").item
