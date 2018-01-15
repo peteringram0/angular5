@@ -1,9 +1,11 @@
-h1 Home
+.header
+    h1 Feed: {{ url }} : count {{ images.length }}
 
 input([(ngModel)]="url", placeholder='Subreadit URL', type="text")
 
 button(type="button", (click)="getFeed()") Get Feed
 
-.grid
-    div(*ngFor="let item of items")
-        img(src="{{item}}")
+.content
+    .grid
+        div(*ngFor="let item of images")
+            img(src="{{item}}")
