@@ -4,5 +4,6 @@ input([(ngModel)]="url", placeholder='Subreadit URL', type="text")
 
 button(type="button", (click)="getFeed()") Get Feed
 
-div(*ngFor="let item of items").container
-    img(src="{{item}}").item
+.grid
+    div(*ngFor="let item of items")
+        img(src="{{item}}")
