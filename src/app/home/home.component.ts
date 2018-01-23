@@ -7,11 +7,12 @@ import {HttpClient} from '@angular/common/http';
     templateUrl: './home.component.html',
     styleUrls: ['./home.component.styl']
 })
+
 export class HomeComponent implements OnInit {
 
     api: string = 'https://www.reddit.com/r';
     url: string = 'watches';
-    images: object = [];
+    data: object = [];
 
     constructor(private http: HttpClient) {
     }
@@ -41,10 +42,25 @@ export class HomeComponent implements OnInit {
         if (!feedData || !feedData.data)
             return;
 
-        this.images = feedData.data.children
-            .map(post => post.data.url)
-            .filter(url => /gifv$/.exec(url))
-            .map(url => url.replace(/v$/, ''));
+        const items = feedData.data.children
+            .map(post => post.data.url);
+
+        const data = {
+            gifs: items.filter(url => /gifv$/.exec(url))
+                .map(url => {
+                    return {
+                        type: 'gif', url: url.replace(/v$/, '')
+                    };
+                }),
+            images: items.filter(url => /jpg$|png$|jepg$/.exec(url))
+                .map(url => {
+                    return {type: 'image', url: url};
+                })
+        };
+
+        this.data = data.gifs.concat(data.images);
+
+        console.log(this.data);
 
     }
 

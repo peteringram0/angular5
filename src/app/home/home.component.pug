@@ -1,5 +1,5 @@
 .header
-    h1 Feed: {{ url }} : count {{ images.length }}
+    //h1 Feed: {{ url }} : count {{ images.length }}
 
 input([(ngModel)]="url", placeholder='Subreadit URL', type="text")
 
@@ -7,5 +7,6 @@ button(type="button", (click)="getFeed()") Get Feed
 
 .content
     .grid
-        div(*ngFor="let item of images")
-            img(src="{{item}}")
+        div(*ngFor="let item of data")
+            img(*ngIf="item.type === 'gif'" src="{{item.url}}")
+            img(*ngIf="item.type === 'image'" src="{{item.url}}")
