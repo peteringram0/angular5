@@ -1,16 +1,26 @@
 body
+    margin 0
 
     h1, ul
         margin 0
 
-    .main-wrapper
-        display grid
 
-        .nav
-            background-color red
+app-home
+    display grid
+    grid-template-columns 1fr 1fr
+    grid-template-areas "navbar header"\
+    "content content"
 
-        .header
-            background-color blue
+    .nav
+        background-color red
+        grid-area navbar
+        ul
+            justify-self center
 
-        .content
-            background-color pink
+    .header
+        background-color blue
+        grid-area header
+
+    .content
+        background-color pink
+        grid-area content
