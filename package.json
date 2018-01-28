@@ -13,7 +13,7 @@
         "pug-it": "pug src",
         "pug-it:w": "pug src -P -w",
         "prebuild": "yarn run pug-it",
-        "postinstall": "yarn run build"
+        "postinstall": "npm run build"
     },
     "engines": {
         "node": "6.11.0",
