@@ -38,11 +38,12 @@
         "pug-cli": "^1.0.0-alpha6",
         "rxjs": "^5.5.6",
         "stylus": "^0.54.5",
-        "zone.js": "^0.8.19"
-    },
-    "devDependencies": {
+        "zone.js": "^0.8.19",
         "@angular/cli": "1.6.4",
         "@angular/compiler-cli": "^5.1.0",
+        "typescript": "~2.5.3"
+    },
+    "devDependencies": {
         "@angular/language-service": "^5.1.0",
         "@types/jasmine": "~2.8.3",
         "@types/jasminewd2": "~2.0.2",
@@ -59,7 +60,6 @@
         "karma-jasmine-html-reporter": "^0.2.2",
         "protractor": "~5.1.2",
         "ts-node": "~3.2.0",
-        "tslint": "~5.9.1",
-        "typescript": "~2.5.3"
+        "tslint": "~5.9.1"
     }
 }
