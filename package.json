@@ -3,6 +3,7 @@
     "version": "0.0.0",
     "license": "MIT",
     "scripts": {
+        "heroku-prebuild": "npm install yarn -g",
         "ng": "ng",
         "dev": "yarn run pug-it:w & yarn run server",
         "server": "ng serve",
