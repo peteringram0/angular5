@@ -44,6 +44,9 @@ export class HomeComponent implements OnInit {
         if (!feedData || !feedData.data)
             return;
 
+        // Clear out existing array
+        this.data.splice(0, this.data.length)
+
         feedData.data.children.forEach(post => {
 
             if (/gifv$/.exec(post.data.url) !== null) {
