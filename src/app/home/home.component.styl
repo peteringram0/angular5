@@ -1,8 +1,11 @@
 .grid
-    margin-top 50px
     display grid
-    grid-template-columns 2fr 1fr
+    grid-template-columns 1fr 1fr
 
     > div
         img
             width 100%
+
+@media (max-width 768px)
+    .grid
+        grid-template-columns 1fr

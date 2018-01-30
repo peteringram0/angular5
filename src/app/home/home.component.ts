@@ -11,7 +11,8 @@ import {HttpClient} from '@angular/common/http';
 export class HomeComponent implements OnInit {
 
     api: string = 'https://www.reddit.com/r';
-    url: string = 'watches';
+    url: string = 'videos';
+    // url: string = 'watches';
     data: object = [];
 
     constructor(private http: HttpClient) {
@@ -29,7 +30,7 @@ export class HomeComponent implements OnInit {
         if (this.url === null)
             return;
 
-        this.http.get(`${this.api}/${this.url}.json?limit=100?sort=top&t=week`)
+        this.http.get(`${this.api}/${this.url}.json?limit=500?sort=top&t=week`)
             .subscribe(this.processData.bind(this));
 
     }
@@ -55,12 +56,12 @@ export class HomeComponent implements OnInit {
             images: items.filter(url => /jpg$|png$|jepg$/.exec(url))
                 .map(url => {
                     return {type: 'image', url: url};
-                })
+                }),
         };
 
-        this.data = data.gifs.concat(data.images);
+        console.log(items);
 
-        console.log(this.data);
+        this.data = data.gifs.concat(data.images);
 
     }
 

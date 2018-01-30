@@ -1,8 +1,9 @@
 app-nav.nav
 
 .header
-    input([(ngModel)]="url", placeholder='Subreadit URL', type="text")
-    button(type="button", (click)="getFeed()") Get Feed
+    form((ngSubmit)="getFeed()")
+        input([(ngModel)]="url", placeholder='Subreadit URL', type="text", [ngModelOptions]="{standalone: true}")
+        button(type="button", (click)="getFeed()") Get Feed
 
 .content
     .grid
