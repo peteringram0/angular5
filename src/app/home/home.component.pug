@@ -8,5 +8,5 @@ app-nav.nav
 .content
     .grid
         div(*ngFor="let item of data")
-            img(*ngIf="item.type === 'gif'" src="{{item.url}}")
-            img(*ngIf="item.type === 'image'" src="{{item.url}}")
+            img(*ngIf="item.type === 'gif' || item.type === 'image'" src="{{item.url}}")
+            iframe(*ngIf="item.type === 'iframe'" [src]="data[14].url")
